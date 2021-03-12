@@ -4,6 +4,7 @@ using System;
 using System.Buffers;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -420,6 +421,20 @@ namespace com.etsoo.UserAgentParser
             {
                 return part.Split(' ').First();
             }
+        }
+
+        /// <summary>
+        /// To Json string
+        /// 获取Json字符串
+        /// </summary>
+        /// <param name="options">Options</param>
+        /// <param name="includeSource">Include the source UA</param>
+        /// <returns>Json string</returns>
+        public async Task<string> ToJsonAsync(JsonSerializerOptions? options = null, bool includeSource = false)
+        {
+            var bw = new ArrayBufferWriter<byte>();
+            await ToJsonAsync(bw, options, includeSource);
+            return Encoding.UTF8.GetString(bw.WrittenSpan);
         }
 
         /// <summary>
