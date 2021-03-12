@@ -6,7 +6,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>ETSOO SmartERP NextGen Team</Authors>
     <Company>ETSOO</Company>
-    <Description>ETSOO SmartERP NextGen shared User-Agent parser.</Description>
+    <Description>ETSOO SmartERP NextGen shared User-Agent simple parser.</Description>
     <Copyright>Copyright © ETSOO 2020</Copyright>
     <PackageProjectUrl>https://www.etsoo.com/SmartERP/</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
