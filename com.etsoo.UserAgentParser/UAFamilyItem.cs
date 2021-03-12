@@ -52,12 +52,12 @@ namespace com.etsoo.UserAgentParser
 
             if (Minor.HasValue)
             {
-                w.WriteNumber(options.ConvertName("Major"), Minor.Value);
+                w.WriteNumber(options.ConvertName("Minor"), Minor.Value);
             }
 
             if (Patch.HasValue)
             {
-                w.WriteNumber(options.ConvertName("Major"), Patch.Value);
+                w.WriteNumber(options.ConvertName("Patch"), Patch.Value);
             }
         }
 
