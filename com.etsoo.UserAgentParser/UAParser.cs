@@ -1,7 +1,12 @@
-﻿using System;
+﻿using com.etsoo.Utils.Serialization;
+using com.etsoo.Utils.String;
+using System;
+using System.Buffers;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 
 namespace com.etsoo.UserAgentParser
 {
@@ -283,8 +288,7 @@ namespace com.etsoo.UserAgentParser
                                         var lastParts = spart.Split(' ');
                                         if (lastParts.Length > 1)
                                         {
-                                            company = lastParts[0].ToLower();
-                                            company = char.ToUpper(company.First()) + company.Substring(1);
+                                            company = lastParts[0].AsSpan().ToPascalWord().ToString();
                                         }
 
                                         // SM-T585
@@ -416,6 +420,52 @@ namespace com.etsoo.UserAgentParser
             {
                 return part.Split(' ').First();
             }
+        }
+
+        /// <summary>
+        /// To Json data
+        /// 获取Json数据
+        /// </summary>
+        /// <param name="writer">Json writer</param>
+        /// <param name="options">Options</param>
+        /// <param name="includeSource">Include the source UA</param>
+        /// <returns>Json string</returns>
+        public async Task ToJsonAsync(IBufferWriter<byte> writer, JsonSerializerOptions? options = null, bool includeSource = false)
+        {
+            // Default options
+            options ??= new JsonSerializerOptions(JsonSerializerDefaults.Web);
+
+            // Utf8JsonWriter
+            using var w = options.CreateJsonWriter(writer);
+
+            // Object start
+            w.WriteStartObject();
+
+            if (includeSource)
+            {
+                w.WriteString(options.ConvertName("Source"), Source);
+            }
+
+            if (Device != null)
+            {
+                Device.ToJson(w, options);
+
+                if (OS != null)
+                {
+                    OS.ToJson(w, options);
+                }
+
+                if (Client != null)
+                {
+                    Client.ToJson(w, options);
+                }
+            }
+
+            // Object end
+            w.WriteEndObject();
+
+            // Flush & dispose
+            await w.DisposeAsync();
         }
 
         /// <summary>

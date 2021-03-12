@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using com.etsoo.Utils.Serialization;
+using System.Text;
+using System.Text.Json;
 
 namespace com.etsoo.UserAgentParser
 {
@@ -35,6 +37,31 @@ namespace com.etsoo.UserAgentParser
         }
 
         /// <summary>
+        /// Write to Json
+        /// </summary>
+        /// <param name="w">Writer</param>
+        /// <param name="options">Options</param>
+        public virtual void ToJson(Utf8JsonWriter w, JsonSerializerOptions options)
+        {
+            w.WriteString(options.ConvertName("Family"), Family);
+
+            if (Major.HasValue)
+            {
+                w.WriteNumber(options.ConvertName("Major"), Major.Value);
+            }
+
+            if (Minor.HasValue)
+            {
+                w.WriteNumber(options.ConvertName("Major"), Minor.Value);
+            }
+
+            if (Patch.HasValue)
+            {
+                w.WriteNumber(options.ConvertName("Major"), Patch.Value);
+            }
+        }
+
+        /// <summary>
         /// Override ToString
         /// 重写ToString
         /// </summary>
@@ -42,7 +69,8 @@ namespace com.etsoo.UserAgentParser
         public override string ToString()
         {
             var sb = new StringBuilder(Family);
-            if (Major.HasValue)
+            // Avoid Windows 10 10 string
+            if (!Family.StartsWith("Windows") && Major.HasValue)
             {
                 sb.Append(' ');
                 sb.Append(Major.Value);
