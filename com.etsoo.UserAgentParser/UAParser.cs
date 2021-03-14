@@ -17,6 +17,8 @@ namespace com.etsoo.UserAgentParser
     /// </summary>
     public class UAParser
     {
+        // https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference
+        // http://regexstorm.net/tester
         // First level items splitter through space outside of parenthesis
         // 通过非括号内的空字符穿，对第一层项目拆分
         private static readonly Regex itemsRegex = new(@"\s+(?![^\(]+\))", RegexOptions.Compiled);
@@ -481,6 +483,35 @@ namespace com.etsoo.UserAgentParser
 
             // Flush & dispose
             await w.DisposeAsync();
+        }
+
+        /// <summary>
+        /// To short name
+        /// 获取短名称
+        /// </summary>
+        /// <returns>Name</returns>
+        public string ToShortName()
+        {
+            if (!Valid || Device == null)
+                return string.Empty;
+
+            var items = new List<string>();
+
+            var d = Device.ToString();
+            if (!string.IsNullOrEmpty(d))
+                items.Add(d);
+
+            if (OS != null)
+            {
+                items.Add(OS.Family);
+            }
+
+            if (Client != null)
+            {
+                items.Add(Client.Family);
+            }
+
+            return string.Join(' ', items);
         }
 
         /// <summary>

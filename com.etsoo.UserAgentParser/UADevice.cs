@@ -24,7 +24,9 @@ namespace com.etsoo.UserAgentParser
             w.WriteString(options.ConvertName("Family"), Family.ToString());
 
             if (!string.IsNullOrEmpty(Company))
+            {
                 w.WriteString(options.ConvertName("Company"), Company);
+            }
 
             if (!string.IsNullOrEmpty(Brand))
             {
