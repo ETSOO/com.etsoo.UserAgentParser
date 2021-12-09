@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>ETSOO SmartERP NextGen Team</Authors>
@@ -15,7 +15,10 @@
     <RepositoryUrl>https://github.com/ETSOO/com.etsoo.UserAgentParser/</RepositoryUrl>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>etsoo.snk</AssemblyOriginatorKeyFile>
-    <Version>1.0.5</Version>
+    <Version>1.0.6</Version>
+	<EnablePreviewFeatures>true</EnablePreviewFeatures>
+	<LangVersion>preview</LangVersion>
+	<ImplicitUsings>true</ImplicitUsings>
   </PropertyGroup>
 
   <ItemGroup>
@@ -26,7 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="com.etsoo.Utils" Version="1.0.10" />
+    <PackageReference Include="com.etsoo.Utils" Version="1.0.80" />
   </ItemGroup>
 
 </Project>

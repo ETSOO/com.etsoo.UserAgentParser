@@ -1,5 +1,4 @@
 ﻿using com.etsoo.Utils.Serialization;
-using System.Collections.Generic;
 using System.Text.Json;
 
 namespace com.etsoo.UserAgentParser
