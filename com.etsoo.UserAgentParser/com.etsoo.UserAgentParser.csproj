@@ -15,9 +15,7 @@
     <RepositoryUrl>https://github.com/ETSOO/com.etsoo.UserAgentParser/</RepositoryUrl>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>etsoo.snk</AssemblyOriginatorKeyFile>
-    <Version>1.0.6</Version>
-	<EnablePreviewFeatures>true</EnablePreviewFeatures>
-	<LangVersion>preview</LangVersion>
+    <Version>1.0.7</Version>
 	<ImplicitUsings>true</ImplicitUsings>
   </PropertyGroup>
 
@@ -29,7 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="com.etsoo.Utils" Version="1.0.80" />
+    <PackageReference Include="com.etsoo.Utils" Version="1.1.12" />
   </ItemGroup>
 
 </Project>
