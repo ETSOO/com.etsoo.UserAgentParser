@@ -3,11 +3,11 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
     <Authors>ETSOO SmartERP NextGen Team</Authors>
     <Company>ETSOO</Company>
     <Description>ETSOO SmartERP NextGen shared User-Agent simple parser.</Description>
-    <Copyright>Copyright © ETSOO 2020</Copyright>
+    <Copyright>Copyright © ETSOO 2022</Copyright>
     <PackageProjectUrl>https://www.etsoo.com/SmartERP/</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryType>GitHub</RepositoryType>
@@ -15,8 +15,8 @@
     <RepositoryUrl>https://github.com/ETSOO/com.etsoo.UserAgentParser/</RepositoryUrl>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>etsoo.snk</AssemblyOriginatorKeyFile>
-    <Version>1.0.7</Version>
-	<ImplicitUsings>true</ImplicitUsings>
+    <Version>1.0.8</Version>
+	  <ImplicitUsings>true</ImplicitUsings>
   </PropertyGroup>
 
   <ItemGroup>
@@ -27,7 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="com.etsoo.Utils" Version="1.1.12" />
+    <PackageReference Include="com.etsoo.Utils" Version="1.1.33" />
   </ItemGroup>
 
 </Project>
