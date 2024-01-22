@@ -1,33 +1,30 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
     <Authors>ETSOO SmartERP NextGen Team</Authors>
     <Company>ETSOO / 亿速思维</Company>
     <Description>ETSOO User-Agent Parser
 亿速思维用户代理解析器</Description>
-    <Copyright>Copyright © ETSOO 2004 - 2022</Copyright>
+    <Copyright>Copyright © ETSOO 2004 - 2024</Copyright>
     <PackageProjectUrl>https://www.etsoo.com/SmartERP/</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIcon>logo.png</PackageIcon>
     <RepositoryUrl>https://github.com/ETSOO/com.etsoo.UserAgentParser/</RepositoryUrl>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>etsoo.snk</AssemblyOriginatorKeyFile>
-    <Version>1.0.10</Version>
-	  <ImplicitUsings>true</ImplicitUsings>
+    <Version>1.0.11</Version>
+    <ImplicitUsings>true</ImplicitUsings>
   </PropertyGroup>
-
   <ItemGroup>
     <None Include="..\logo.png">
       <Pack>True</Pack>
-      <PackagePath></PackagePath>
+      <PackagePath>
+      </PackagePath>
     </None>
   </ItemGroup>
-
   <ItemGroup>
-    <PackageReference Include="com.etsoo.Utils" Version="1.1.41" />
+    <PackageReference Include="com.etsoo.Utils" Version="1.1.63" />
   </ItemGroup>
-
 </Project>
